@@ -1,0 +1,72 @@
+<template>
+
+  <nav class="navbar" css="height: ${height}">
+    <span class="navbar-brand" css="height: ${height}"><img src.bind="image"></span>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="row">
+          <div class="col-xs-10">
+            <h3 show.bind="messageVisible">${message}</h3>
+          </div>
+          <div class="col-xs-2">
+            <br>
+            <button class="btn btn-default" click.trigger="toggleMessage($event)"><strong>${messageVisible ? 'hide' : 'show'}</strong> message</button>
+          </div>
+        </div>
+
+        <hr>
+
+        <form>
+          <div class="form-group row">
+            <div class="col-xs-3 text-right">
+              <label for="name" class="control-label">Name:</label>
+            </div>
+            <div class="col-xs-4">
+              <input id="name" class="form-control" type="text" value.bind="name" autocomplete="off">
+              <h5 class="text-right text-muted"><small>letter count: ${name.length}</small></h5>
+            </div>
+            <div if.bind="name" class="col-xs-5">
+              <h5><a href="http://www.behindthename.com/name/${name}" target="_blank">What does my name mean?</a></h5>
+            </div>
+          </div>
+        </form>
+
+        <hr>
+
+        <div show.bind="name" class="row">
+          <div class="col-xs-12">
+            <div class="alert alert-info">
+              Hello <strong>${name}</strong>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <table class.bind="tableClasses">
+                <caption class="text-right"></caption>
+                <thead>
+                <tr>
+                  <th>Letter</th>
+                  <th>ASCII value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr repeat.for="letter of name.split('')">
+                  <td>${letter}</td>
+                  <td>${letter.charCodeAt(0)}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</template>
