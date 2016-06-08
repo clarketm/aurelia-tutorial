@@ -1,7 +1,7 @@
 {
   "name": "aurelia-tutorial",
   "version": "1.0.0",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia.",
+  "description": "A starter kit for building a standard app with Aurelia.",
   "keywords": [
     "aurelia",
     "tutorial"

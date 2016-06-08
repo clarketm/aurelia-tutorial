@@ -18,17 +18,12 @@ export class Home {
     return (+this.number1) + (+this.number2);
   }
 
-  set total(value) {
-    this._total = value;
-  }
-
   toggleMessage(event) {
     this.answerVisible = !this.answerVisible;
   }
 
   triggerNavAlert(name) {
     this.navAlertVisible = name.length ? true : false;
-    console.log(name.length);
   }
 
 }
