@@ -16,12 +16,12 @@
   </div>
 
   <div class="container">
+    <h1>${message}</h1>
+    <br>
     <div class="row">
       <div class="col-xs-12">
-
         <div class="row">
           <div class="col-xs-12">
-            <h3>${message}</h3>
             <div>
               <h3 style.bind="styleString">
                 <small>It is as simple as</small>
@@ -52,7 +52,7 @@
               <label for="name" class="control-label">Name:</label>
             </div>
             <div class="col-xs-4">
-              <input id="name" class="form-control" type="text" value.bind="name" autocomplete="off" keyUp.trigger="triggerNavAlert(name)">
+              <input id="name" class="form-control" type="text" value.bind="name" placeholder="enter name" autocomplete="off" keyUp.trigger="triggerNavAlert(name)">
               <h5 show.bind="name.length > 0" class="text-right text-muted">
                 <small>letter count: ${name.length}</small>
               </h5>
